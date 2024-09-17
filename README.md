@@ -16,7 +16,7 @@ git clone https://github.com/scrapp08/dotfiles.git ~/.dotfiles
 git clone git@github.com:scrapp08/dotfiles.git ~/.dotfiles
 ```
 
-3. Create symlinks in the Hoome directory to the real files in the repo.
+3. Create symlinks in the Home directory to the real files in the repo.
 
 ```zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
