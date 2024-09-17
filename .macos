@@ -54,6 +54,9 @@ defaults write com.apple.dock "mineffect" -string "scale"
 # Enable springloading
 defaults write com.apple.dock "enable-spring-load-actions-on-all-items" -bool "true"
 
+# Minimise windows to application icon
+defaults write com.apple.dock minimize-to-application -bool true
+
 killall Dock
 
 ###############################################################################
@@ -62,6 +65,9 @@ killall Dock
 
 # Show full URL in address bar
 defaults write com.apple.Safari "ShowFullURLInSmartSearchField" -bool "true"
+
+# Disable auto-open 'safe' files
+defaults write com.apple.Safari AutoOpenSafeDownloads -bool false
 
 killall Safari
 
