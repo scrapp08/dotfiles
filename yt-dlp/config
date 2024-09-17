@@ -1,0 +1,3 @@
+-o ~/Downloads/%(title)s.%(ext)s
+-S res:1080,ext:mp4:m4a
+-S vcodec:h264,res,acodec:m4a
