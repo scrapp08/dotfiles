@@ -47,6 +47,8 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias zshsource="source ~/.zshrc"
 alias ls="eza --icons=always"
+alias ytdl="yt-dlp"
+alias update="brew update; brew upgrade"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
