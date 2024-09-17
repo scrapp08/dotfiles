@@ -1,0 +1,137 @@
+# Close System Settings to prevent overriding changes
+osascript -e 'tell application "System Preferences" to quit'
+
+# Ask for admin password
+sudo -v
+
+# Stay as sudo until `.macos` finished
+while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
+
+###############################################################################
+# System config                                                               #
+###############################################################################
+
+# Set computer name (as done via System Preferences → Sharing)
+sudo scutil --set ComputerName "Laptop-3"
+sudo scutil --set HostName "Laptop-3"
+sudo scutil --set LocalHostName "Laptop-3"
+sudo defaults write /Library/Preferences/SystemConfiguration/com.apple.smb.server NetBIOSName -string "Laptop-3"
+
+# Disable the sound effects on boot
+sudo nvram SystemAudioVolume=" "
+
+# Disable application quarantine message
+defaults write com.apple.LaunchServices "LSQuarantine" -bool "false"
+
+# Propt to confirm save changes
+defaults write NSGlobalDomain "NSCloseAlwaysConfirmsChanges" -bool "false"
+
+###############################################################################
+# Dock                                                                        #
+###############################################################################
+
+# Set dock position to left
+defaults write com.apple.dock "orientation" -string "left"
+
+# Set dock icon size
+defaults write com.apple.dock "tilesize" -int "64"
+
+# Autohide dock
+defaults write com.apple.dock "autohide" -bool "true"
+
+# Set autohide animation time
+defaults write com.apple.dock "autohide-time-modifier" -float "0.5"
+
+# Set autohide delay
+defaults write com.apple.dock "autohide-delay" -float "0.04"
+
+# Hide recents
+defaults write com.apple.dock "show-recents" -bool "false"
+
+# Set minimise effect to 'Scale'
+defaults write com.apple.dock "mineffect" -string "scale"
+
+# Enable springloading
+defaults write com.apple.dock "enable-spring-load-actions-on-all-items" -bool "true"
+
+killall Dock
+
+###############################################################################
+# Safari                                                                      #
+###############################################################################
+
+# Show full URL in address bar
+defaults write com.apple.Safari "ShowFullURLInSmartSearchField" -bool "true"
+
+killall Safari
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Show file extensions
+defaults write NSGlobalDomain "AppleShowAllExtensions" -bool "true"
+
+# Show path bar
+defaults write com.apple.finder "ShowPathbar" -bool "true"
+
+# Set list view to default
+defaults write com.apple.finder "FXPreferredViewStyle" -string "Nlsv"
+
+# Keep folders on top when sorting by name
+defaults write com.apple.finder "_FXSortFoldersFirst" -bool "true"
+
+# Set default search scope to current folder
+defaults write com.apple.finder "FXDefaultSearchScope" -string "SCcf"
+
+# Empty bin after 30 days
+defaults write com.apple.finder "FXRemoveOldTrashItems" -bool "true"
+
+# Remove warning from changing file extensions
+defaults write com.apple.finder "FXEnableExtensionChangeWarning" -bool "false"
+
+# Show file icon in title bar
+defaults write com.apple.universalaccess "showWindowTitlebarIcons" -bool "true"
+
+killall Finder
+
+###############################################################################
+# Desktop                                                                     #
+###############################################################################
+
+# Keep folders on top when sorting
+defaults write com.apple.finder "_FXSortFoldersFirstOnDesktop" -bool "true"
+
+killall Finder
+
+###############################################################################
+# Menu Bar                                                                    #
+###############################################################################
+
+# Set clock format
+defaults write com.apple.menuextra.clock "DateFormat" -string "\"EEE MMM d HH:mm:ss\""
+
+###############################################################################
+# Trackpad                                                                    #
+###############################################################################
+
+# Enable three-finger drag
+defaults write com.apple.AppleMultitouchTrackpad "TrackpadThreeFingerDrag" -bool "true"
+
+###############################################################################
+# Mission Control                                                             #
+###############################################################################
+
+# Keep spaces arrangement
+defaults write com.apple.dock "mru-spaces" -bool "false"
+
+killall Dock
+
+###############################################################################
+# TextEdit                                                                    #
+###############################################################################
+
+# Set default format to plaintext
+defaults write com.apple.TextEdit "RichText" -bool "false"
+
+killall TextEdit
