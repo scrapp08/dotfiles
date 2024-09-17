@@ -21,6 +21,8 @@ git clone git@github.com:scrapp08/dotfiles.git ~/.dotfiles
 ```zsh
 ln -s ~/.dotfiles/.zshrc ~/.zshrc
 ln -s ~/.dotfiles/.gitconfig ~/.gitconfig
+ln -s ~/.dotfiles/.oh-my-zsh/ ~/.oh-my-zsh/
+ln -s ~/.dotfiles/.p10k.zsh ~/.p10k.zsh
 ```
 
 4. Install Homebrew, followed by the software listed in the Brewfile.
