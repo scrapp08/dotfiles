@@ -14,6 +14,7 @@ git clone https://github.com/scrapp08/dotfiles.git ~/.dotfiles
 
 # Using SSH
 git clone git@github.com:scrapp08/dotfiles.git ~/.dotfiles
+```
 
 3. Create symlinks in the Hoome directory to the real files in the repo.
 
