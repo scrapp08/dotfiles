@@ -50,6 +50,10 @@ alias ls="eza --icons=always"
 alias ytdl="yt-dlp"
 alias update="brew update; brew upgrade"
 alias vimconfig="vim .vimrc"
+alias speedtest="speedtest-cli"
+alias pyserver="python3 -m http.server"
+alias restart="shutdown -r now"
+
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh

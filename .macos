@@ -1,0 +1,2 @@
+# Open TextEdit to new document automatically
+defaults write com.apple.TextEdit NSShowAppCentricOpenPanelInsteadOfUntitledFile -bool false
