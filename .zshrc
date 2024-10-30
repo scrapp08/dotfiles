@@ -53,6 +53,7 @@ alias vimconfig="vim .vimrc"
 alias speedtest="speedtest-cli"
 alias pyserver="python3 -m http.server"
 alias restart="shutdown -r now"
+alias flactom4a="ffmpeg -i input.flac -c:v copy -c:a alac output.m4a"
 
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
